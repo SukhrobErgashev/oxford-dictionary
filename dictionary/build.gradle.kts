@@ -37,20 +37,22 @@ publishing {
     publications {
         register<MavenPublication>("release") {
             groupId = "dev.sukhrob"
-            artifactId = "my-library"
-            version = "1.0"
-            artifact("$buildDir/outputs/arr/dictionary-release.arr")
+            artifactId = "dictionary"
+            version = "1.1"
+            artifact("$buildDir/outputs/aar/dictionary-release.aar")
         }
 
     }
 
     repositories {
         maven {
-            name = ""
-            url = uri("https://maven.pkg.github.com/SukhrobErgashev/")
+            name = "my-lib"
+            url = uri("https://maven.pkg.github.com/SukhrobErgashev/oxford-dictionary")
             credentials {
-                username = System.getenv("GITHUB_USER")
-                password = System.getenv("GITHUB_TOKEN")
+//                username = System.getenv("GITHUB_USER")
+//                password = System.getenv("GITHUB_TOKEN")
+                username = "SukhrobErgashev"
+                password = "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"
             }
         }
     }
